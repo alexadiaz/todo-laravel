@@ -22,3 +22,8 @@ Route::get('/acumulado', 'ResultadoController@acumulado')->name('app.acumulado')
 Route::get('/resultado/{res}', 'ResultadoController@resultado')->name('app.resultado');
 
 Route::post('/haceroperacion', 'OperacionesController@hacerOperacion')->name('app.haceroperacion');
+
+
+Route::get('/todo', 'TodoController@formulario')->name('app.todo');
+
+Route::post('/operaciones','TodoController@operaciones')->name('app.operaciones');
