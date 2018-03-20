@@ -11,8 +11,7 @@
             @for ($i=0; $i<count($array); $i++)
                 <li>
                     <div class="linea">{{ $array[$i] }}</div>
-                    <button type="submit" name="action" value="editar">Editar</button>
-                    <button type="submit" name="action" value="{{$i}}" data-value="{{$i}}">Eliminar</button>
+                    <button type="submit" name="action" value="eliminar,{{$i}}">Eliminar</button>
                 </li>
             @endfor
         </ul>
