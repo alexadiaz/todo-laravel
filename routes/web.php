@@ -25,5 +25,4 @@ Route::post('/haceroperacion', 'OperacionesController@hacerOperacion')->name('ap
 
 
 Route::get('/todo', 'TodoController@formulario')->name('app.todo');
-
 Route::post('/operaciones','TodoController@operaciones')->name('app.operaciones');
