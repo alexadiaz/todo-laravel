@@ -13,24 +13,24 @@ class TodoController extends Controller
     }
 
     public function operaciones(Request $_request){
-        $a = ($_request->input('action'));
-        dump($a);
-
-        switch ($_request->input('action')){
+        $action = str_before($_request->input('action'),',');
+        $id = str_after($_request->input('action'),',');
+       
+        switch ($action){
             case 'agregar':
-                //$_request->session()->flush();
                 $tarea = $_request->input("tarea");
                 if($tarea != "") Session::push('lista_tareas', $tarea);   
                 $array = session("lista_tareas");
-                return view('todo.formulario',['array' => $array]);
+                return redirect()->route('app.todo');
             break;
             
-          
-            
-            // case 'eliminar':
-            //     $nombre = $_request->input("action");
-            //     dump($_request);
-            // break;           
+            case 'eliminar':
+                $array = session("lista_tareas");
+                unset($array[$id]);
+                $array = array_values($array);
+                session(["lista_tareas" => $array]);
+                return redirect()->route('app.todo');         
+            break;
         }
     }
 }
