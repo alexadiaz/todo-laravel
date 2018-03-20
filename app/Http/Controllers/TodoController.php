@@ -8,7 +8,8 @@ use Session;
 class TodoController extends Controller
 {
     public function formulario(){
-        return view('todo.formulario',['array' => []]);
+        Session::has('lista_tareas') ? $array = (session("lista_tareas")) : $array = [];
+        return view('todo.formulario',['array' => $array]);
     }
 
     public function operaciones(Request $_request){
