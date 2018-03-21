@@ -26,3 +26,8 @@ Route::post('/haceroperacion', 'OperacionesController@hacerOperacion')->name('ap
 
 Route::get('/todo', 'TodoController@formulario')->name('app.todo');
 Route::post('/operaciones','TodoController@operaciones')->name('app.operaciones');
+
+
+Route::get('/form', 'FormController@formulario')->name('app.form');
+Route::post('/agregar','FormController@agregar')-> name('app.agregar');
+Route::post('/eliminar','FormController@eliminar')-> name('app.eliminar');
