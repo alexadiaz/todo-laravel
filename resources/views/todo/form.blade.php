@@ -1,18 +1,19 @@
 @extends('layouts.formmaster')
 
-@section('agregar')
-    <h2>Agrege una tarea</h2>
-    @include("partials.todo.agregar")
+@section('titulo')
+    <h1>Todo Session</h1>
 @endsection
 
-@section('lista')
-    <h2>Lista de tareas</h2>
-    <ul>
-        @for($i=0; $i<count($lista); $i++)
-            <li>
-                <div class='linea'>{{$lista[$i]}}</div>
-                @include("partials.todo.eliminar")
-            </li>
-        @endfor
-    </ul>
+@section('formulario')
+    <h3>Agrege una tarea</h3>
+    
+    <form action="{{route('app.agregar')}}" method='POST'>
+        <input type="text" name='tarea'>
+        {{ csrf_field() }}
+        <button type="submit">Agregar</button>
+    </form>
+
+    @if(!empty($lista))
+        @include('partials.todo.lista')
+    @endif
 @endsection
