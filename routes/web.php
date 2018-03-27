@@ -29,8 +29,7 @@ Route::post('/operaciones','TodoController@operaciones')->name('app.operaciones'
 
 
 Route::get('/form', 'FormController@formulario')->name('app.form');
-Route::get('/editar/{id}', 'FormController@formulario_editar')->name('app.form_editar');
+Route::get('/form_editar/{id}', 'FormController@formulario_editar')->name('app.form_editar');
 Route::post('/agregar','FormController@agregar')-> name('app.agregar');
-Route::post('/editar','FormController@editar')-> name ('app.editar');
-Route::post('/modificar','FormController@modificar')-> name ('app.modificar');
 Route::post('/eliminar','FormController@eliminar')-> name('app.eliminar');
+Route::post('/modificar','FormController@modificar')-> name ('app.modificar');
