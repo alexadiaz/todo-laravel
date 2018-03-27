@@ -7,6 +7,6 @@
         <input type="text" name='tarea' value="{{$tarea}}">
         {{ csrf_field() }}
         <button type="submit">modificar</button>
-    <a href="{{route('app.form')}}">cancelar</a>
+        <a href="{{route('app.form')}}">cancelar</a>
     </form>
 @endsection
