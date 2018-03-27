@@ -11,4 +11,4 @@
     @empty
         <div>No hay tareas guardadas</div>
     @endforelse
-</ul>
+</ul>  
