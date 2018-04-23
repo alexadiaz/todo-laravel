@@ -33,3 +33,10 @@ Route::get('/form_editar/{id}', 'FormController@formulario_editar')->name('app.f
 Route::post('/agregar','FormController@agregar')-> name('app.agregar');
 Route::post('/eliminar','FormController@eliminar')-> name('app.eliminar');
 Route::post('/modificar','FormController@modificar')-> name ('app.modificar');
+
+
+Route::get('/consultar_v1', 'FormControllerDb@consultar_v1');
+Route::get('/consultar_v2', 'FormControllerDb@consultar_v2');
+Route::get('/insertar_v1', 'FormControllerDb@insertar_v1');
+Route::get('/consultar_v3', 'FormControllerDb@consultar_v3');
+Route::get('/insertar_v3', 'FormControllerDb@insertar_v3');
